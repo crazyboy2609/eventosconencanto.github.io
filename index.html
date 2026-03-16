@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Arte en Globos</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#fafafa;
+color:#333;
+}
+
+header{
+background:linear-gradient(135deg,#ff6fb7,#ffa3d7);
+color:white;
+padding:100px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:48px;
+margin:0;
+}
+
+header p{
+font-size:20px;
+}
+
+.cta{
+background:white;
+color:#ff6fb7;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+display:inline-block;
+margin-top:20px;
+}
+
+nav{
+background:#333;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:60px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:12px;
+padding:25px;
+box-shadow:0 6px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+}
+
+.rentals{
+max-width:600px;
+margin:auto;
+}
+
+.rentals li{
+background:white;
+margin:10px 0;
+padding:15px;
+border-radius:8px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.quote{
+max-width:500px;
+margin:auto;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+background:#ff6fb7;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+width:100%;
+}
+
+.calculator{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+max-width:500px;
+margin:auto;
+}
+
+.result{
+font-size:22px;
+text-align:center;
+margin-top:20px;
+font-weight:bold;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:#333;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Arte en Globos</h1>
+<p>Balloon Decor • Table Designs • Party Rentals</p>
+
+<a class="cta" href="#quote">Request a Quote</a>
+
+</header>
+
+<nav>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#rentals">Rentals</a>
+<a href="#calculator">Estimate</a>
+<a href="#quote">Quote</a>
+</nav>
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Balloon Garlands</h3>
+<p>Custom balloon garlands for birthdays, showers, and events.</p>
+<p><b>Starting $120</b></p>
+</div>
+
+<div class="card">
+<h3>Table Designs</h3>
+<p>Beautiful themed tables with decorations.</p>
+<p><b>Starting $80</b></p>
+</div>
+
+<div class="card">
+<h3>Backdrops</h3>
+<p>Photo backdrops with balloons and decor.</p>
+<p><b>Starting $150</b></p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Past Work</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1607082349566-187342175e2f">
+<img src="https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac">
+<img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d">
+<img src="https://images.unsplash.com/photo-1604537529428-15bcbeecfe4d">
+
+</div>
+
+</section>
+
+<section id="rentals">
+
+<h2>Rental Items</h2>
+
+<ul class="rentals">
+<li>Throne Chair – $75</li>
+<li>Cylinder Stands (Set of 3) – $25</li>
+<li>Backdrop Stand – $35</li>
+<li>Table Linens – $12</li>
+</ul>
+
+</section>
+
+<section id="calculator">
+
+<h2>Price Estimate</h2>
+
+<div class="calculator">
+
+<select id="balloons">
+<option value="0">No Balloon Garland</option>
+<option value="120">Balloon Garland ($120)</option>
+<option value="180">Large Garland ($180)</option>
+</select>
+
+<select id="table">
+<option value="0">No Table Design</option>
+<option value="80">Basic Table ($80)</option>
+<option value="150">Premium Table ($150)</option>
+</select>
+
+<select id="backdrop">
+<option value="0">No Backdrop</option>
+<option value="150">Backdrop ($150)</option>
+</select>
+
+<button onclick="calculate()">Calculate Estimate</button>
+
+<div class="result" id="result">$0</div>
+
+</div>
+
+</section>
+
+<section id="quote">
+
+<h2>Request a Quote</h2>
+
+<div class="quote">
+
+<input placeholder="Your Name">
+<input placeholder="Email">
+<input placeholder="Event Date">
+
+<select>
+<option>Select Service</option>
+<option>Balloon Decor</option>
+<option>Table Design</option>
+<option>Rentals</option>
+</select>
+
+<textarea placeholder="Describe your event"></textarea>
+
+<button>Send Request</button>
+
+</div>
+
+</section>
+
+<a class="whatsapp" href="#">WhatsApp</a>
+
+<footer>
+
+<p>© 2026 Arte en Globos</p>
+<p>Balloon Decor & Event Styling</p>
+
+</footer>
+
+<script>
+
+function calculate(){
+
+let balloons = parseInt(document.getElementById("balloons").value)
+let table = parseInt(document.getElementById("table").value)
+let backdrop = parseInt(document.getElementById("backdrop").value)
+
+let total = balloons + table + backdrop
+
+document.getElementById("result").innerText = "$" + total
+
+}
+
+</script>
+
+</body>
+</html>
